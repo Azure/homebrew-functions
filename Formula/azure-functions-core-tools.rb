@@ -3,7 +3,7 @@ class AzureFunctionsCoreTools < Formula
   homepage "https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
   url "https://functionscdn.azureedge.net/public/2.0.1-beta.30/Azure.Functions.Cli.osx-x64.2.0.1-beta.30.zip"
   version "2.0.1-beta.30"
-  sha256 "9161e6ea0abce04e16f18167e1bb8c75bc1c6caa61a3f47ba5f776a03c717ad6"
+  sha256 "0f9113ee398288548110a18e02f6bb03132364441ce4b044751a870dc2303886"
   head "https://github.com/Azure/azure-functions-core-tools"
 
   bottle :unneeded
