@@ -4,7 +4,7 @@ class AzureFunctionsCoreTools < Formula
   url "https://functionscdn.azureedge.net/public/2.7.1704/Azure.Functions.Cli.osx-x64.2.7.1704.zip"
   version "2.7.1724"
   # make sure sha256 is lowercase.
-  sha256 "95cb70382edc50e2264de0b41839476618c946d18fd8067ed0933f685e50f89e"
+  sha256 "47d20c45c95b3986c54003a448bc866995c9cb540400d201612012fd7cba3f95"
   head "https://github.com/Azure/azure-functions-core-tools"
 
   bottle :unneeded
