@@ -17,7 +17,11 @@ class AzureFunctionsCoreTools < Formula
     prefix.install Dir["*"]
     chmod 0555, prefix/"func"
     bin.install_symlink prefix/"func"
-    print @@telemetry
+    begin
+      FileUtils.touch(prefix/"telemetryDefaultOn.sentinel")
+      print @@telemetry
+    rescue Exception
+    end
   end
 
   test do

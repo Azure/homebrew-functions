@@ -9,10 +9,19 @@ class AzureFunctionsCoreToolsV3Preview < Formula
 
   bottle :unneeded
 
+  @@telemetry = "\n Telemetry \n --------- \n The Azure Functions Core tools collect usage data in order to help us improve your experience." \
+  + "\n The data is anonymous and doesn\'t include any user specific or personal information. The data is collected by Microsoft." \
+  + "\n \n You can opt-out of telemetry by setting the FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT environment variable to \'1\' or \'true\' using your favorite shell.\n"
+
   def install
     prefix.install Dir["*"]
     chmod 0555, prefix/"func"
     bin.install_symlink prefix/"func"
+    begin
+      FileUtils.touch(prefix/"telemetryDefaultOn.sentinel")
+      print @@telemetry
+    rescue Exception
+    end
   end
 
   test do
