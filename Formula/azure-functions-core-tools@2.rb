@@ -1,4 +1,4 @@
-class AzureFunctionsCoreTools < Formula
+class AzureFunctionsCoreToolsAT2 < Formula
   desc "Azure Functions Core Tools 2.0"
   homepage "https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
   url "https://functionscdn.azureedge.net/public/2.7.1948/Azure.Functions.Cli.osx-x64.2.7.1948.zip"
