@@ -1,10 +1,10 @@
 class AzureFunctionsCoreToolsAT3 < Formula
   desc "Azure Functions Core Tools 3.0"
   homepage "https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
-  url "https://functionscdn.azureedge.net/public/3.0.2630/Azure.Functions.Cli.osx-x64.3.0.2630.zip"
-  version "3.0.2630"
+  url "https://functionscdn.azureedge.net/public/3.0.2750/Azure.Functions.Cli.osx-x64.3.0.2750.zip"
+  version "3.0.2750"
   # make sure sha256 is lowercase.
-  sha256 "8eb6c5cf21ba3a56baa9f49e09fafb13d748312736359af3eed53ac11ec02d81"
+  sha256 "66009ef8ed47a817bbbaebc1686f85a9dcd3e660f2b719b4bc4067bfd30dd4d5"
   head "https://github.com/Azure/azure-functions-core-tools"
 
   bottle :unneeded
