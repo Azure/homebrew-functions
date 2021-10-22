@@ -7,7 +7,6 @@ class AzureFunctionsCoreToolsAT4 < Formula
   sha256 "f15d785d6d6ada9dad19dc07d23f6b44ab4fb456e449567a16efe726778c830a"
   head "https://github.com/Azure/azure-functions-core-tools"
 
-  bottle :unneeded
 
   @@telemetry = "\n Telemetry \n --------- \n The Azure Functions Core tools collect usage data in order to help us improve your experience." \
   + "\n The data is anonymous and doesn\'t include any user specific or personal information. The data is collected by Microsoft." \
