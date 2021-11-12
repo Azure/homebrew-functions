@@ -1,10 +1,10 @@
 class AzureFunctionsCoreToolsAT4 < Formula
   desc "Azure Functions Core Tools 4.0"
   homepage "https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
-  url "https://functionscdn.azureedge.net/public/4.0.3780/Azure.Functions.Cli.osx-x64.4.0.3780.zip"
-  version "4.0.3780"
+  url "https://functionscdn.azureedge.net/public/4.0.3971/Azure.Functions.Cli.osx-x64.4.0.3971.zip"
+  version "4.0.3971"
   # make sure sha256 is lowercase.
-  sha256 "f15d785d6d6ada9dad19dc07d23f6b44ab4fb456e449567a16efe726778c830a"
+  sha256 "9a852a5c5e28ea043e8c141e6e690c8535a4cc1996018ef25d902b1704914fdd"
   head "https://github.com/Azure/azure-functions-core-tools"
 
 
