@@ -1,0 +1,57 @@
+pr:
+  branches:
+    include:
+      - master
+
+trigger:
+- master
+
+jobs:
+- job: Test
+  strategy:
+    matrix:
+      Mac_v4:
+        ImageType: 'macOS-latest'
+        FileSuffix: '@4'
+        MajorVersion: '4'
+      Mac_v3:
+        ImageType: 'macOS-latest'
+        FileSuffix: '@3'
+        MajorVersion: '3'
+      Mac_v3_legacy:
+        ImageType: 'macOS-latest'
+        FileSuffix: '-v3-preview'
+        MajorVersion: '3'
+      Mac_v2:
+        ImageType: 'macOS-latest'
+        FileSuffix: '@2'
+        MajorVersion: '2'
+      Mac_v2_legacy:
+        ImageType: 'macOS-latest'
+        FileSuffix: ''
+        MajorVersion: '2'
+      Linux_v4:
+        ImageType: 'ubuntu-latest'
+        FileSuffix: '@4'
+        MajorVersion: '4'
+      Linux_v3:
+        ImageType: 'ubuntu-latest'
+        FileSuffix: '@3'
+        MajorVersion: '3'
+      Linux_v3_legacy:
+        ImageType: 'ubuntu-latest'
+        FileSuffix: '-v3-preview'
+        MajorVersion: '3'
+      Linux_v2:
+        ImageType: 'ubuntu-latest'
+        FileSuffix: '@2'
+        MajorVersion: '2'
+      Linux_v2_legacy:
+        ImageType: 'ubuntu-latest'
+        FileSuffix: ''
+        MajorVersion: '2'
+  pool:
+    vmImage: $(ImageType)
+  steps:
+  - pwsh: ./test.ps1 -MajorVersion "$(MajorVersion)" -FileSuffix "$(FileSuffix)"
+    displayName: 'Test brew formula'
