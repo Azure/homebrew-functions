@@ -4,8 +4,13 @@ class AzureFunctionsCoreToolsAT4 < Formula
     funcArch = "linux-x64"
     funcSha = "988f35286c16b9d9ac8bad778707b7d2bd63d0c179bea0092c9e25b1b1193b50"
   else
-    funcArch = "osx-x64"
-    funcSha = "392d95aba87576790655da023f5975bb582422505fcb0b1196f57db069d1bed5"
+    if Hardware::CPU.intel?
+      funcArch = "osx-x64"
+      funcSha = "392d95aba87576790655da023f5975bb582422505fcb0b1196f57db069d1bed5"
+    else
+      funcArch = "osx-arm64"
+      funcSha = "6463403157f9db06075225e60960e31819448f0dbcdb6056770bd4b7ac608ee7"
+    end
   end
 
   desc "Azure Functions Core Tools 4.0"
