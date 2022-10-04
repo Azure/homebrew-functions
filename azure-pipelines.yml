@@ -53,5 +53,8 @@ jobs:
   pool:
     vmImage: $(ImageType)
   steps:
+  - script: PATH="/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+    displayName: 'Add brew to path'
+    condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
   - pwsh: ./test.ps1 -MajorVersion "$(MajorVersion)" -FileSuffix "$(FileSuffix)"
     displayName: 'Test brew formula'
