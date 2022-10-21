@@ -1,11 +1,11 @@
 class AzureFunctionsCoreToolsAT3 < Formula
-  funcVersion = "3.0.4806"
+  funcVersion = "3.0.4837"
   if OS.linux?
     funcArch = "linux-x64"
-    funcSha = "b304bc4fb131851ba5469879782ffc04ef92bf7cb47479bda5eacc9c5b57c531"
+    funcSha = "8fa72a13fc07655d650886f5c3fda9d72815d1d2a994ccbea9ced11f10f4a642"
   else
     funcArch = "osx-x64"
-    funcSha = "f021bc669dbead8f31ba191be40868fd9f9757b4a1c2be1f8cf09a04f2b6d4b1"
+    funcSha = "c5e537d6091789a91db4c379abf814a596f296f71b9c6610dd0e44635d8825c8"
   end
 
   desc "Azure Functions Core Tools 3.0"
