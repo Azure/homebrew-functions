@@ -1,14 +1,14 @@
 class AzureFunctionsCoreToolsAT4 < Formula
-  funcVersion = "4.0.5274"
+  funcVersion = "4.0.5312"
   if OS.linux?
     funcArch = "linux-x64"
-    funcSha = "fddcb8effbddeee09876547d1037a9582c56e1a6766237cf102c5740ade1ece2"
+    funcSha = "dd31700568abf86df672f3964aae8d910dea5ac64c95d5cd0fe921db868c30ef"
   elsif Hardware::CPU.arm?
     funcArch = "osx-arm64"
-    funcSha = "8e9069b3c9504fac0c46cb897cf49409386b143ef2897a6e9ef7e97a0de874b7"
+    funcSha = "75ba4e3f7c141f033feb1e15f3768770f93b5a44ab0727ea07eb0db62664e56a"
   else
     funcArch = "osx-x64"
-    funcSha = "80101fc4039fe89da14042b7b1ef17538de1c60806b8536b6d0faa1648becddc"
+    funcSha = "fe455c389569c0789baa7feceaa4a2aec46273887f7795b5afb3fc591edfbc81"
   end
 
   desc "Azure Functions Core Tools 4.0"
