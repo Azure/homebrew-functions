@@ -2,7 +2,7 @@
 
 ```bash
 brew tap azure/functions
-brew install azure-functions-core-tools
+brew install azure-functions-core-tools@4
 ```
 
 # Contributing
