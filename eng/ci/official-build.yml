@@ -32,6 +32,10 @@ variables:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1es
   parameters:
+    pool:
+      name: 1es-pool-azfunc
+      image: 1es-windows-2022
+      os: windows
     stages:     
       - stage: BuildAndTest
         jobs:
