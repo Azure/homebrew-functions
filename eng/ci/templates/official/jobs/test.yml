@@ -19,7 +19,7 @@ jobs:
         FileSuffix: '@2'
         MajorVersion: '2'
       Mac_v2_legacy:
-        ImageType: 'macOS-latest'
+        ImageType: '1es-macOS-latest'
         FileSuffix: ''
         MajorVersion: '2'
       Linux_v4:
@@ -39,11 +39,12 @@ jobs:
         FileSuffix: '@2'
         MajorVersion: '2'
       Linux_v2_legacy:
-        ImageType: 'ubuntu-latest'
+        ImageType: '1es-ubuntu-latest'
         FileSuffix: ''
         MajorVersion: '2'
   pool:
     vmImage: $(ImageType)
+    name: 1es-pool-azfunc
   steps:
   - script: echo "##vso[task.prependpath]/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:/usr/local/bin"
     displayName: 'Add brew to path'
