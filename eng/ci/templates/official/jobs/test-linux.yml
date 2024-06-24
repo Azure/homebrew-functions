@@ -18,9 +18,9 @@ jobs:
         FileSuffix: ''
         MajorVersion: '2'
   pool:
-    vmImage: '1es-ubuntu-22.04'
+    name: 1es-pool-azfunc  
+    image: 1es-ubuntu-22.04
     os: linux
-    name: '1es-pool-azfunc'  
   steps:
   - script: echo "##vso[task.prependpath]/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:/usr/local/bin"
     displayName: 'Add brew to path'
