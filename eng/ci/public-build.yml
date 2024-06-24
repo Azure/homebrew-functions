@@ -42,5 +42,5 @@ extends:
       - stage: Test
         jobs:
         - template: /eng/ci/templates/official/jobs/test-mac.yml@self
-        - template: /eng/ci/templates/official/jobs/test-linux-public.yml@self
+        - template: /eng/ci/templates/public/jobs/test-linux-public.yml@self
 
