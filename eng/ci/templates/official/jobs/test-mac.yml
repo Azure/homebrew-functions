@@ -1,5 +1,5 @@
 jobs:
-- job: Test
+- job: MacTest
   strategy:
     matrix:
       Mac_v4:
