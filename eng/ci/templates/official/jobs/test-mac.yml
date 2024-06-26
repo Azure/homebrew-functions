@@ -1,0 +1,29 @@
+jobs:
+- job: MacTest
+  strategy:
+    matrix:
+      Mac_v4:
+        FileSuffix: '@4'
+        MajorVersion: '4'
+      Mac_v3:
+        FileSuffix: '@3'
+        MajorVersion: '3'
+      Mac_v3_legacy:
+        FileSuffix: '-v3-preview'
+        MajorVersion: '3'
+      Mac_v2:
+        FileSuffix: '@2'
+        MajorVersion: '2'
+      Mac_v2_legacy:
+        FileSuffix: ''
+        MajorVersion: '2'
+  pool:
+    name: Azure Pipelines  
+    image: 'macOS-latest'
+    os: macOS
+  steps:
+  - script: echo "##vso[task.prependpath]/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:/usr/local/bin"
+    displayName: 'Add brew to path'
+    condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
+  - pwsh: ./test.ps1 -MajorVersion "$(MajorVersion)" -FileSuffix "$(FileSuffix)"
+    displayName: 'Test brew formula'
