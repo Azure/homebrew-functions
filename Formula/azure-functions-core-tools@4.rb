@@ -1,5 +1,6 @@
 class AzureFunctionsCoreToolsAT4 < Formula
   funcVersion = "4.0.6280"
+  consolidatedBuildId = "123"
   if OS.linux?
     funcArch = "linux-x64"
     funcSha = "86e2636e9cbb2cdc8b2ab48639a8cd284d47ab16cb6d76d7e331f391ea8fdfb3"
@@ -13,7 +14,7 @@ class AzureFunctionsCoreToolsAT4 < Formula
 
   desc "Azure Functions Core Tools 4.0"
   homepage "https://docs.microsoft.com/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
-  url "https://functionscdn.azureedge.net/public/#{funcVersion}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
+  url "https://functionscdn.azureedge.net/public/4.0.#{consolidatedBuildId}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
   sha256 funcSha
   version funcVersion
   head "https://github.com/Azure/azure-functions-core-tools"

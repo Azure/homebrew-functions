@@ -1,25 +1,16 @@
 param (
     [Parameter(Mandatory=$true)]
     [ValidateNotNullOrEmpty()]
-    [string]
-    $dropLocation
+    [string] $dropLocation,
+
+    [Parameter(Mandatory=$true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $version,
+
+    [Parameter(Mandatory=$true)]
+    [ValidateNotNullOrEmpty()]
+    [string] $consolidatedBuildId
 )
-
-$files= Get-ChildItem -Recurse -Path "$dropLocation"
-
-foreach($file in $files)
-{
-    if ($file.FullName -match '\.([0-9]+\.[0-9]+\.[0-9]+)\.zip$')
-    {
-        $version = $Matches.1
-        Write-Host "New func version: ""$version"""
-        break
-    }
-}
-
-if (-Not $version) {
-    throw "Failed to determine new func version from drop ""$dropLocation"""
-}
 
 function updateFormula([string]$fileSuffix) {
     $filePath = "./Formula/azure-functions-core-tools$fileSuffix.rb"
@@ -31,6 +22,14 @@ function updateFormula([string]$fileSuffix) {
         $content = $content.Replace($oldVersion, $version)
     } else {
         throw "Failed to find funcVersion entry in ""$filePath"""
+    }
+
+    # Update consolidatedBuildId
+    if ($content -match 'consolidatedBuildId = "(.*)"') {
+        $oldConsolidatedBuildId = $Matches.1
+        $content = $content.Replace($oldConsolidatedBuildId, $consolidatedBuildId)
+    } else {
+        throw "Failed to find consolidatedBuildId entry in ""$filePath"""
     }
 
     # Update sha for each arch
