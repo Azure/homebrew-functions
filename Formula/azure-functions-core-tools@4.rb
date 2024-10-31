@@ -14,9 +14,8 @@ class AzureFunctionsCoreToolsAT4 < Formula
 
   desc "Azure Functions Core Tools 4.0"
   homepage "https://docs.microsoft.com/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
-  url "https://homebrewtest.blob.core.windows.net/6543/Azure.Functions.Cli.osx-x64.4.0.6413.zip"
-  #url "https://functionscdn.azureedge.net/public/4.0.#{consolidatedBuildId}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
-  #sha256 funcSha
+  url "https://functionscdn.azureedge.net/public/4.0.#{consolidatedBuildId}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
+  sha256 funcSha
   version funcVersion
   head "https://github.com/Azure/azure-functions-core-tools"
 
@@ -29,8 +28,6 @@ class AzureFunctionsCoreToolsAT4 < Formula
     prefix.install Dir["*"]
     chmod 0555, prefix/"func"
     chmod 0555, prefix/"gozip"
-    # chmod +w , prefix/"in-proc6/tools/python"
-    # chmod 0555, prefix/"in-proc6/tools/python"
     bin.install_symlink prefix/"func"
     begin
       FileUtils.touch(prefix/"telemetryDefaultOn.sentinel")
