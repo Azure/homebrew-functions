@@ -29,8 +29,8 @@ class AzureFunctionsCoreToolsAT4 < Formula
     prefix.install Dir["*"]
     chmod 0555, prefix/"func"
     chmod 0555, prefix/"gozip"
-    chmod +w , prefix/"in-proc6/tools/python"
-    chmod 0555, prefix/"in-proc6/tools/python"
+    # chmod +w , prefix/"in-proc6/tools/python"
+    # chmod 0555, prefix/"in-proc6/tools/python"
     bin.install_symlink prefix/"func"
     begin
       FileUtils.touch(prefix/"telemetryDefaultOn.sentinel")
