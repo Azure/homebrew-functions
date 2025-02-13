@@ -10,7 +10,7 @@ class AzureFunctionsCoreToolsV3Preview < Formula
 
   desc "Azure Functions Core Tools 3.0"
   homepage "https://docs.microsoft.com/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
-  url "https://functionscdn.azureedge.net/public/#{funcVersion}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
+  url "https://cdn.functions.azure.com/public/#{funcVersion}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
   sha256 funcSha
   version funcVersion
   head "https://github.com/Azure/azure-functions-core-tools"
