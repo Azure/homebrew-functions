@@ -1,7 +1,7 @@
 param (
     [Parameter(Mandatory=$true)]
     [ValidateNotNullOrEmpty()]
-    [string] $dropLocation,
+    [string] $artifactsDirectoryRoot,
 
     [Parameter(Mandatory=$true)]
     [ValidateNotNullOrEmpty()]
@@ -36,6 +36,7 @@ function updateFormula([string]$fileSuffix) {
     foreach($arch in "osx-x64", "osx-arm64", "linux-x64") {
         if ($content -match "funcArch = ""$arch""\s*funcSha = ""(.*)""") {
             $oldSha = $Matches.1
+            $dropLocation = "$artifactsDirectoryRoot/_core-tools-consolidated-artifacts.official/drop-$arch/coretools-cli"
             $shaPath = Join-Path $dropLocation "Azure.Functions.Cli.$arch.$version.zip.sha2"
             $sha = Get-Content -Path $shaPath
             $content = $content.Replace($oldSha, $sha)
