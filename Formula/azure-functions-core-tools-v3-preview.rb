@@ -1,16 +1,16 @@
 class AzureFunctionsCoreToolsV3Preview < Formula
-  funcVersion = "3.0.4899"
+  funcVersion = "3.0.5682"
   if OS.linux?
     funcArch = "linux-x64"
-    funcSha = "8797525788788b141128229f3a9b88d31c4a14255ce04fef3410c1f89d30a7f1"
+    funcSha = "5b5536d11171c22bc983123f2a54b04581dc2e0923f09335a6e61d7029a74f12"
   else
     funcArch = "osx-x64"
-    funcSha = "cf440e81432b3bdff9e196f146c5c3508c1788fbc9a06339f08fec658fe4e68a"
+    funcSha = "bc7aa0bec5e652b7e70ecddd5dcc1a2306ee88297424276bd78e253b02b246c2"
   end
 
   desc "Azure Functions Core Tools 3.0"
   homepage "https://docs.microsoft.com/azure/azure-functions/functions-run-local#run-azure-functions-core-tools"
-  url "https://functionscdn.azureedge.net/public/#{funcVersion}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
+  url "https://cdn.functions.azure.com/public/#{funcVersion}/Azure.Functions.Cli.#{funcArch}.#{funcVersion}.zip"
   sha256 funcSha
   version funcVersion
   head "https://github.com/Azure/azure-functions-core-tools"

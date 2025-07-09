@@ -1,0 +1,29 @@
+jobs:
+- job: LinuxTest
+  strategy:
+    matrix:
+      Linux_v4:
+        FileSuffix: '@4'
+        MajorVersion: '4' 
+      Linux_v3:
+        FileSuffix: '@3'
+        MajorVersion: '3'
+      Linux_v3_legacy:
+        FileSuffix: '-v3-preview'
+        MajorVersion: '3'
+      Linux_v2: 
+        FileSuffix: '@2'
+        MajorVersion: '2'
+      Linux_v2_legacy:
+        FileSuffix: ''
+        MajorVersion: '2'
+  pool:
+    name: 1es-pool-azfunc  
+    image: 1es-ubuntu-22.04
+    os: linux
+  steps:
+  - script: echo "##vso[task.prependpath]/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:/usr/local/bin"
+    displayName: 'Add brew to path'
+    condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
+  - pwsh: ./test.ps1 -MajorVersion "$(MajorVersion)" -FileSuffix "$(FileSuffix)"
+    displayName: 'Test brew formula'
