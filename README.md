@@ -1,8 +1,11 @@
-﻿![Azure Functions Logo](https://raw.githubusercontent.com/Azure/azure-functions-cli/master/src/Azure.Functions.Cli/npm/assets/azure-functions-logo-color-raster.png)
+﻿![Azure Functions Logo](https://raw.githubusercontent.com/Azure/azure-functions-core-tools/refs/heads/main/eng/res/functions.png)
 
 ```bash
 brew tap azure/functions
 brew install azure-functions-core-tools@4
+
+# If upgrading on a machine that has 2.x or 3.x installed, use:
+brew link --overwrite azure-functions-core-tools@4
 ```
 
 # Contributing
