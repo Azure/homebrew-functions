@@ -10,7 +10,6 @@ param (
     $FileSuffix
 )
 
-# Choose a tap name you control
 $tap = "azure/functions"
 
 # 1) Create the tap (no git repo needed for local use)
@@ -31,6 +30,7 @@ if (-not $?) { exit 1 }
 brew install "$tap/azure-functions-core-tools$FileSuffix"
 if (-not $?) { exit 1 }
 
+# 4) Verify installation and version
 $funcOutput = func --version
 if (-not $?) { exit 1 }
 
