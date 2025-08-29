@@ -34,6 +34,8 @@ if (-not $?) { exit 1 }
 $funcOutput = func --version
 if (-not $?) { exit 1 }
 
+Write-Host "func --version output: $funcOutput"
+
 $actualMajorVersion = ([version]$funcOutput.trim()).Major
 if ($actualMajorVersion -ne $MajorVersion) {
     Write-Error "Expected: ""$MajorVersion"", Actual ""$actualMajorVersion"""
