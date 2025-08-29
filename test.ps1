@@ -13,8 +13,8 @@ param (
 # Choose a tap name you control
 $tap = "azure/functions"
 
-# 1) Create the tap
-brew tap-new $tap
+# 1) Create the tap (no git repo needed for local use)
+brew tap-new --no-git $tap
 if (-not $?) { exit 1 }
 
 # 2) Copy formula file into the tap's Formula directory
