@@ -1,7 +1,10 @@
 class AzureFunctionsCoreToolsAT4 < Formula
   funcVersion = "4.3.0"
   consolidatedBuildId = "239852"
-  if OS.linux?
+  if OS.linux? && Hardware::CPU.arm?
+    funcArch = "linux-arm64"
+    funcSha = ""
+  elsif OS.linux?
     funcArch = "linux-x64"
     funcSha = "e7971b72e355adc3f60f2bb9e3a77607a9c9604733c4aa4bd8e77bbe7bc26b9e"
   elsif Hardware::CPU.arm?
