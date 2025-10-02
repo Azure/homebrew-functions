@@ -33,8 +33,8 @@ function updateFormula([string]$fileSuffix) {
     }
 
     # Update sha for each arch
-    foreach($arch in "osx-x64", "osx-arm64", "linux-x64") {
-        if ($content -match "funcArch = ""$arch""\s*funcSha = ""(.*)""") {
+    foreach($arch in "osx-x64", "osx-arm64", "linux-arm64", "linux-x64") {
+        if ($content -match "when ""$arch""\s+then\s+""(.*)""") {
             $oldSha = $Matches.1
             $dropLocation = "$artifactsDirectoryRoot/_core-tools-consolidated-artifacts.official/func-cli-$arch/func-cli"
             $shaPath = Join-Path $dropLocation "Azure.Functions.Cli.$arch.$version.zip.sha2"
