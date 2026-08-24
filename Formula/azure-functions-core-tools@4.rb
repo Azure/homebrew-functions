@@ -1,6 +1,6 @@
 class AzureFunctionsCoreToolsAT4 < Formula
-  funcVersion = "4.13.0"
-  consolidatedBuildId = "290904"
+  funcVersion = "4.14.0"
+  consolidatedBuildId = "299278"
   
   # Arch + OS matrix (intel == x86_64)
   os   = OS.mac? ? "osx" : "linux"
@@ -15,10 +15,10 @@ class AzureFunctionsCoreToolsAT4 < Formula
   funcArch = "#{os}-#{arch}"
 
   funcSha = case funcArch
-  when "linux-arm64" then "d9d944c96fc2fea01865b249ec3cadb4cbe8d9aea4929be7dc5983a24a68d306"
-  when "linux-x64"   then "f98b08d201c33fd0c939b5bed2893d73e8f4abd081155c0755a0fbd95b2db6c4"
-  when "osx-arm64"   then "9a2b7c2730b9eb981b38d0cc504be0493de8fd3cf736e2e6c794990be08dc271"
-  when "osx-x64"     then "4e05f12b895c462a86cb5100a54b4b55bd0cdf0c17c3e50123ef85339e3fee8d"
+  when "linux-arm64" then "c690bc66a82da1e75cfd20ceff73822f7ad06fd254608a1fe3669f2efc2c8dea"
+  when "linux-x64"   then "ecce0d57e288efc85d22cce7fc37d7129e78d0918368e8f1c84e9d3d354689aa"
+  when "osx-arm64"   then "b0f71d0a287139215e3a628eca406885d6358aaeff6843480582c8ea6a1726a1"
+  when "osx-x64"     then "f05f70e5ae68957e623a67567a5cef25e4395f7d3fe232a535f56f8849e9605d"
   else
     odie "No SHA configured for #{funcArch}"
   end
