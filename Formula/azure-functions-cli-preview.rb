@@ -14,10 +14,10 @@ class AzureFunctionsCliPreview < Formula
   funcArch = "#{os}-#{arch}"
 
   funcSha = case funcArch
-  when "linux-arm64" then "48b60a3893eee1b4efd25b47384b47fed6f2376b4ac163297b58d40019a57b5f"
-  when "linux-x64"   then "8665f6a85daa27e9689af828c32a1678a9f8610ad56d2d981ebb82800af93af7"
-  when "osx-arm64"   then "3d233df8af3ce970295acc2301b6d046459774013982fdace3b312ae31694ba3"
-  when "osx-x64"     then "801df359b5831ad5d048e7e0b0d559a8de7efa7476db9ec247d2f475af8562cf"
+  when "linux-arm64" then "a1c100f917e131d12001e1f38dd4699564b74bf00ff4ebc09147c7329d3cc22b"
+  when "linux-x64"   then "8ef4fcdd1cc6311ede7beb98614ed3076f18e167c001b37a0a04dcb373a267d9"
+  when "osx-arm64"   then "ea5f33758c14a99e50a05f57203cf65c3792f98df70993b1c1699c05342a5216"
+  when "osx-x64"     then "bd6e0748f1194aa4a55cd987a6823c05805ceb999480d4c0eb861ecfe08e8338"
   else
     odie "No SHA configured for #{funcArch}"
   end
