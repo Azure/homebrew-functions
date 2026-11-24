@@ -1,5 +1,5 @@
 class AzureFunctionsCliPreview < Formula
-  funcVersion = "5.0.0-preview.5"
+  funcVersion = "5.0.0-preview.7"
 
   # Arch + OS matrix (intel == x86_64)
   os   = OS.mac? ? "osx" : "linux"
@@ -14,10 +14,10 @@ class AzureFunctionsCliPreview < Formula
   funcArch = "#{os}-#{arch}"
 
   funcSha = case funcArch
-  when "linux-arm64" then "a1c100f917e131d12001e1f38dd4699564b74bf00ff4ebc09147c7329d3cc22b"
-  when "linux-x64"   then "8ef4fcdd1cc6311ede7beb98614ed3076f18e167c001b37a0a04dcb373a267d9"
-  when "osx-arm64"   then "ea5f33758c14a99e50a05f57203cf65c3792f98df70993b1c1699c05342a5216"
-  when "osx-x64"     then "bd6e0748f1194aa4a55cd987a6823c05805ceb999480d4c0eb861ecfe08e8338"
+  when "linux-arm64" then "cb109389075c2fe7fe38015860745b88b2304e706d1f44ac4972940a00f0884f"
+  when "linux-x64"   then "1a5f846a04dc20e4fac6370d861a3ee77fee010c7e42d1f20243bcdb55e38b74"
+  when "osx-arm64"   then "7e3bcec11005ba14083b47307cc544f6997891cabe0c7910b55511fd3f8e47e1"
+  when "osx-x64"     then "bfbaa7c4b5a81d3ceb2cb59917fe6cca9b24f9804f1879be1107a5452afa8171"
   else
     odie "No SHA configured for #{funcArch}"
   end
